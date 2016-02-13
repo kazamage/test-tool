@@ -1,0 +1,36 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+tasks.withType(AbstractCompile)*.options*.encoding = defaultEncoding
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter:$springBootVersion") {
+    exclude module: 'commons-logging'
+  }
+  compile("org.apache.camel:camel-spring-boot:$camelVersion") {
+    exclude module: 'commons-logging'
+  }
+  compile("org.apache.camel:camel-jms:$camelVersion")
+  compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+  compile "org.apache.geronimo.components:geronimo-transaction:$geronimoVersion"
+}
+
+springBoot {
+  mainClass = 'jp.pgw.develop.swallow.tool.Application'
+}

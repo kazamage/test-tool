@@ -1,0 +1,16 @@
+logging:
+  file: logs/tool.log
+  level:
+    root: INFO
+
+camel.springboot.name: camelContext
+
+jms:
+  transactionTimeout: 60
+  cacheLevelName: CACHE_CONNECTION
+
+wmq:
+  queueManager: QueueManager
+  channel: Channel
+  hostName: localhost
+  port: 1414

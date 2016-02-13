@@ -27,8 +27,8 @@ dependencies {
     exclude module: 'commons-logging'
   }
   compile("org.apache.camel:camel-jms:$camelVersion")
-  compile "org.codehaus.groovy:groovy-all:$groovyVersion"
   compile "org.apache.geronimo.components:geronimo-transaction:$geronimoVersion"
+  compile "org.codehaus.groovy:groovy-all:$groovyVersion"
 }
 
 springBoot {
